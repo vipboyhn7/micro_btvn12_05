@@ -18,6 +18,7 @@ public class Order {
     private Integer quantity;
     private String customerEmail;
     private Instant createdAt;
+    private String status;
 
     protected Order() {
     }
@@ -27,6 +28,7 @@ public class Order {
         this.quantity = quantity;
         this.customerEmail = customerEmail;
         this.createdAt = Instant.now();
+        this.status = "CREATED";
     }
 
     public Long getId() {
@@ -47,5 +49,13 @@ public class Order {
 
     public Instant getCreatedAt() {
         return createdAt;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void markCompleted() {
+        this.status = "COMPLETED";
     }
 }

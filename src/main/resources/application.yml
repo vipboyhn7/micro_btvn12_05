@@ -23,7 +23,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       properties:
-        spring.json.trusted.packages: com.example.productservice.order
+        spring.json.trusted.packages: com.example.productservice.order,com.example.productservice.shipping
       auto-offset-reset: earliest
 
 server:

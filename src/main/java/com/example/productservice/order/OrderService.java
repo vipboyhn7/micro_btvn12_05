@@ -76,4 +76,10 @@ public class OrderService {
             }
         }
     }
+
+    public Order getById(Long orderId) {
+        return orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Order not found: " + orderId));
+    }
 }
